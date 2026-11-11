@@ -116,3 +116,7 @@ python3 evals/run_learning.py --base-url http://127.0.0.1:18789 \
 [0.2.0测试记录](evals/XUEGAO-RESULTS.md) · [0.1.0历史记录](evals/RESULTS.md)
 
 公开包不包含客户原稿、私有状态或凭据。GitHub 仓库采用 MIT License；ClawHub 发布版本依照平台要求，同时按 MIT-0 授权，可免费使用、修改和分发且无需署名。
+
+## 反馈与联系
+
+问题反馈、使用建议或合作咨询：[18810808738@163.com](mailto:18810808738@163.com)。
