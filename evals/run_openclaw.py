@@ -103,7 +103,7 @@ def main():
                       + "账号上下文：\n" + json.dumps(fixture["context"], ensure_ascii=False)
                       + "\n当前任务：\n" + case["task"])
             if arm == "candidate" and args.candidate_invocation == "explicit":
-                prompt = "请使用creator-calibration技能完成以下任务，先读取技能。\n" + prompt
+                prompt = "请使用xuegao技能完成以下任务，先读取技能。\n" + prompt
             session = f"agent:{agent}:skill-eval:{case['id']}:{uuid.uuid4().hex}"
             start = time.monotonic()
             try:

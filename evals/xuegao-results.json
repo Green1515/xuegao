@@ -1,0 +1,114 @@
+{
+  "version": "0.2.0",
+  "synthetic": true,
+  "manual_style_instructions": 0,
+  "model_calls": [
+    {
+      "stage": "learn-history",
+      "elapsed_seconds": 12.37,
+      "output": "{\"account_id\":\"synthetic-author\",\"rules\":[{\"key\":\"direct-product-opening\",\"dimension\":\"opening\",\"scope\":\"观点口播\",\"value\":\"开头直接落到具体选购对象和“先别/先”的取舍动作上，不铺背景、不先讲道理\",\"evidence\":[{\"sample_id\":\"22909572a79e9b5d3481\",\"quote\":\"买书桌，先别盯颜值。\"},{\"sample_id\":\"58bd09b6571676cbb576\",\"quote\":\"挑椅子，先坐一坐。\"},{\"sample_id\":\"048ad37fcfe74dae3fc6\",\"quote\":\"选台灯，先看读书时眼睛舒不舒服。\"}]},{\"key\":\"use-before-look\",\"dimension\":\"viewpoint\",\"scope\":\"观点口播\",\"value\":\"把判断标准落在实际使用是否合适上，并明确把外观排到后面，观点始终围绕这一取舍\",\"evidence\":[{\"sample_id\":\"22909572a79e9b5d3481\",\"quote\":\"先把这两件事试明白，再挑颜色。\"},{\"sample_id\":\"048ad37fcfe74dae3fc6\",\"quote\":\"先试照明，再看外观。\"}]},{\"key\":\"short-selfcheck-questions\",\"dimension\":\"sentence\",\"scope\":\"观点口播\",\"value\":\"短句为主，连用第二人称设问，把抽象标准拆成观众能当场自测的动作或感受\",\"evidence\":[{\"sample_id\":\"22909572a79e9b5d3481\",\"quote\":\"坐下去，脚能不能放稳？桌面够不够摊开一本书？\"},{\"sample_id\":\"58bd09b6571676cbb576\",\"quote\":\"腰背有没有支撑，坐久了能不能换姿势，这才是要紧的。\"}]},{\"key\":\"question-ending\",\"dimension\":\"ending\",\"scope\":\"观点口播\",\"value\":\"结尾用一个面向观众的具体提问收束，不总结全文、不喊口号\",\"evidence\":[{\"sample_id\":\"22909572a79e9b5d3481\",\"quote\":\"你最在意哪一点？\"},{\"sample_id\":\"58bd09b6571676cbb576\",\"quote\":\"你会先看哪一项？\"},{\"sample_id\":\"048ad37fcfe74dae3fc6\",\"quote\":\"你现在这盏灯用着顺手吗？\"}]}]}",
+      "skill_read_observed": true
+    },
+    {
+      "stage": "first-new-draft",
+      "elapsed_seconds": 7.97,
+      "output": "石湾社区装了12处遮雨棚，先别急着说方便。下雨时你站在里面，等车够不够用？从等候区走到入口那段，还淋不淋得到？棚只盖住等候区，路照样露天。先看走一趟顺不顺，再看好不好看。你走那段路，会先看哪一处？",
+      "skill_read_observed": true
+    },
+    {
+      "stage": "learn-human-edit",
+      "elapsed_seconds": 76.87,
+      "output": "{\"account_id\":\"synthetic-author\",\"rules\":[{\"key\":\"direct-product-opening\",\"dimension\":\"opening\",\"scope\":\"观点口播\",\"value\":\"开头直接落到具体对象或当前事项，并给出“先看/先别”的判断动作，不先铺地点、数量等背景\",\"evidence\":[{\"sample_id\":\"edit-bc35c3901a4d6552f760\",\"quote\":\"这件事，我先看每天用起来顺不顺。\"},{\"sample_id\":\"22909572a79e9b5d3481\",\"quote\":\"买书桌，先别盯颜值。\"}],\"supersedes\":\"1163cbdf03bb5a303895\"},{\"key\":\"use-before-look\",\"dimension\":\"viewpoint\",\"scope\":\"观点口播\",\"value\":\"把判断标准落在实际使用是否合适上，并明确把外观排到后面，观点始终围绕这一取舍\",\"evidence\":[{\"sample_id\":\"edit-bc35c3901a4d6552f760\",\"quote\":\"这件事，我先看每天用起来顺不顺。\"},{\"sample_id\":\"048ad37fcfe74dae3fc6\",\"quote\":\"先试照明，再看外观。\"}]},{\"key\":\"first-person-judgment\",\"dimension\":\"viewpoint\",\"scope\":\"观点口播\",\"value\":\"作者用“我先看……”直接给出自己的判断，让观点由本人承担\",\"evidence\":[{\"sample_id\":\"edit-bc35c3901a4d6552f760\",\"quote\":\"这件事，我先看每天用起来顺不顺。\"}]}]}",
+      "skill_read_observed": true
+    },
+    {
+      "stage": "fresh-draft-after-update",
+      "elapsed_seconds": 5.47,
+      "output": "南溪阅读角加了20个插座，先别急着说方便。插座多了，座位没多，你还是得自己安排到馆时间。先看能不能坐下，再看能不能充上电。你去了没位置，插座再多也轮不到你。你更在意座位，还是插座？",
+      "skill_read_observed": true
+    }
+  ],
+  "checks": {
+    "three_sources_imported_including_two_docx": true,
+    "style_activated_without_author_confirmation": true,
+    "first_draft_without_questionnaire": true,
+    "new_fact_present": true,
+    "human_edit_added_style_update": true,
+    "soul_synced_once": true,
+    "fresh_session_used_updated_context": true,
+    "no_model_claimed_firsthand_visit": true
+  },
+  "human_editor_acceptance": "not measured",
+  "pipeline": "Parser/state/sync run by the test adapter; semantic learning and writing by OpenClaw model.",
+  "skill_sha256": "d2536e314518cb7d3b0d405e08a456b7be05bccfa55a8786f2955b179782ebfb",
+  "synced_files": [
+    "SOUL.md",
+    "MEMORY.md",
+    "STYLE.md"
+  ],
+  "final_profile_version": 4,
+  "passed": true,
+  "targeted_retest": {
+    "reason": "Prioritize recent human-edited examples over older short samples",
+    "elapsed_seconds": 7.81,
+    "first_example_id": "edit-bc35c3901a4d6552f760",
+    "output": "南溪阅读角新增20个插座，座位一个没加。先别急着说方便。插座是多了，你有位置坐吗？人多的时候，你排得上吗？到馆时间还得自己安排。先看坐得下坐不下，再看好不好看。你会先看哪一样？",
+    "skill_sha256": "82126a6d7a058f28b6934e418217fe4a4bf52693873b209398fa9d5ff64351b8",
+    "skill_read_observed": true
+  },
+  "internal_calibration": {
+    "output": "{\"account_id\": \"synthetic-author\", \"rules\": [{\"key\": \"use-criteria-first\", \"dimension\": \"viewpoint\", \"scope\": \"观点口播\", \"value\": \"判断标准放在实际使用是否合适上：先把能当场验证的使用感受说清楚，再谈次要方面；具体拿哪一项来比，随题目更换，不固定拿外观当对照。\", \"evidence\": [{\"sample_id\": \"22909572a79e9b5d3481\", \"quote\": \"坐下去，脚能不能放稳？桌面够不够摊开一本书？\"}, {\"sample_id\": \"58bd09b6571676cbb576\", \"quote\": \"腰背有没有支撑，坐久了能不能换姿势，这才是要紧的。\"}, {\"sample_id\": \"edit-bc35c3901a4d6552f760\", \"quote\": \"这件事，我先看每天用起来顺不顺。\"}], \"supersedes\": \"e12dd95501ccdb394013\"}]}",
+    "validation_first_attempt": "rejected mismatched key; state unchanged",
+    "metadata_normalizations": [
+      {
+        "model_key": "use-criteria-first",
+        "preserved_key": "use-before-look"
+      }
+    ],
+    "applied_analysis": {
+      "account_id": "synthetic-author",
+      "rules": [
+        {
+          "key": "use-before-look",
+          "dimension": "viewpoint",
+          "scope": "观点口播",
+          "value": "判断标准放在实际使用是否合适上：先把能当场验证的使用感受说清楚，再谈次要方面；具体拿哪一项来比，随题目更换，不固定拿外观当对照。",
+          "evidence": [
+            {
+              "sample_id": "22909572a79e9b5d3481",
+              "quote": "坐下去，脚能不能放稳？桌面够不够摊开一本书？"
+            },
+            {
+              "sample_id": "58bd09b6571676cbb576",
+              "quote": "腰背有没有支撑，坐久了能不能换姿势，这才是要紧的。"
+            },
+            {
+              "sample_id": "edit-bc35c3901a4d6552f760",
+              "quote": "这件事，我先看每天用起来顺不顺。"
+            }
+          ],
+          "supersedes": "e12dd95501ccdb394013"
+        }
+      ]
+    },
+    "profile_version": 5
+  },
+  "final_retest": {
+    "output": "南溪阅读角新增20个插座，请先别急着说方便，因为座位没有增加，到馆时间还是得自己安排。你去晚了，还有没有位置坐？坐下来，能不能一边充电一边翻书？请先看这两件事。座位不够的话，插座再多也难久坐。你会先看插座，还是先看有没有座？",
+    "elapsed_seconds": 8.76,
+    "profile_version": 5,
+    "irrelevant_appearance_removed": true,
+    "first_example_text": "这件事，我先看每天用起来顺不顺。",
+    "skill_sha256": "66ea7cc6b75dac0fb23540713a96440f936dcaa1be667da6a60f768184c0ad4f",
+    "skill_read_observed": true
+  },
+  "published_skill_sha256": "66ea7cc6b75dac0fb23540713a96440f936dcaa1be667da6a60f768184c0ad4f",
+  "unit_checks_passed": 21,
+  "installed_catalog": [
+    {
+      "name": "xuegao",
+      "eligible": true,
+      "modelVisible": true
+    }
+  ]
+}

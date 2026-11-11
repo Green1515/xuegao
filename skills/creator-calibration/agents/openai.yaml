@@ -1,4 +1,0 @@
-interface:
-  display_name: "创作者校准"
-  short_description: "根据真实样稿和作者反馈校准口播与文案，保留有证据的偏好并验证新稿"
-  default_prompt: "使用 $creator-calibration，根据我的样稿和修改意见写出符合本次要求的口播稿。"

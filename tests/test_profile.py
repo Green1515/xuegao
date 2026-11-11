@@ -7,7 +7,7 @@ import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("profile_store", ROOT / "skills/creator-calibration/scripts/profile.py")
+spec = importlib.util.spec_from_file_location("profile_store", ROOT / "skills/xuegao/scripts/profile.py")
 store = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(store)
 
@@ -35,7 +35,7 @@ class ProfileTests(unittest.TestCase):
         data = store.record(self.path, "demo-a", 0, "address", "常喊朋友们", "口播", "old author request", True)
         old_id = data["rules"][0]["id"]
         store.record(self.path, "demo-a", 1, "address", "直接开场，不喊朋友们", "口播", "new author request", True, old_id)
-        result = subprocess.run([sys.executable, str(ROOT / "skills/creator-calibration/scripts/profile.py"),
+        result = subprocess.run([sys.executable, str(ROOT / "skills/xuegao/scripts/profile.py"),
                                  "--profile", str(self.path), "--account", "demo-a", "context", "--scope", "口播"],
                                 capture_output=True, text=True, check=True)
         fresh = json.loads(result.stdout)
