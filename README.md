@@ -28,6 +28,8 @@
 
 ## 安装
 
+OpenClaw 可通过下方 ClawHub 命令直接安装；Codex、Claude Code 或本地安装方式先取得仓库：
+
 ```sh
 git clone https://github.com/Green1515/xuegao.git
 cd xuegao
@@ -59,7 +61,20 @@ test ! -e ~/.claude/skills/xuegao && cp -R skills/xuegao ~/.claude/skills/
 
 ### OpenClaw
 
-在Gateway能够读取仓库的环境执行：
+ClawHub 页面：[学稿 · xuegao](https://clawhub.ai/green1515/skills/xuegao)。在运行 OpenClaw 的终端执行，将 `YOUR_AGENT` 替换成目标 agent ID：
+
+```sh
+openclaw skills install @green1515/xuegao --agent YOUR_AGENT
+openclaw skills list --agent YOUR_AGENT --json
+```
+
+也可以使用 ClawHub CLI 安装到当前工作区：
+
+```sh
+clawhub install @green1515/xuegao
+```
+
+从 GitHub 仓库本地安装时，在 Gateway 能够读取仓库的环境执行：
 
 ```sh
 openclaw skills install ./skills/xuegao --agent YOUR_AGENT --as xuegao
@@ -100,4 +115,4 @@ python3 evals/run_learning.py --base-url http://127.0.0.1:18789 \
 
 [0.2.0测试记录](evals/XUEGAO-RESULTS.md) · [0.1.0历史记录](evals/RESULTS.md)
 
-公开包不包含客户原稿、私有状态或凭据。MIT License。
+公开包不包含客户原稿、私有状态或凭据。GitHub 仓库采用 MIT License；ClawHub 发布版本依照平台要求，同时按 MIT-0 授权，可免费使用、修改和分发且无需署名。
