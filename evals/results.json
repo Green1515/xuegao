@@ -1,0 +1,332 @@
+{
+  "date": "2026-11-11",
+  "version": "0.1.0",
+  "harness": "OpenClaw 2026.8.1",
+  "model": "deepseek/deepseek-flash",
+  "fixture": "synthetic",
+  "candidate_invocation": "explicit",
+  "repetitions_per_case_arm": 1,
+  "human_editor_acceptance": "not measured",
+  "skill_sha256": "f26a437c39ec7aa27fdf76179808cdcc690007dfb932262f86e6f5814af8ffd7",
+  "rows": [
+    {
+      "case": "author-voice",
+      "arm": "baseline",
+      "text": "星港社区图书室周六多了四十个座位，早上九点开到晚上六点。座位多了，看书确实能从容些，摊得开书，也坐得住，但别把方便当成随时都有空位。我的做法是先想清楚自己几点能到，再倒推出门时间。工作人员提醒不能提前占座，这条得认。座位是轮着用的，去得巧，比去得早更管用。",
+      "checks": {
+        "nonempty": true,
+        "absent:这篇文章": true,
+        "absent:原文认为": true,
+        "absent:这篇稿子": true,
+        "absent:家人们": true,
+        "absent:朋友们": true,
+        "absent:我实地": true,
+        "absent:我去过": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 9.57,
+      "skill_read_observed": false
+    },
+    {
+      "case": "author-voice",
+      "arm": "candidate",
+      "text": "星港社区图书室周六多了40个座位，开放时间还是9点到18点。座位多了，看书确实方便些，但别把它当成随时都有位置。我的建议是，去之前先把自己的时间排好，早点出门，留出找座和安顿的工夫。工作人员也提醒了，不能提前占座。想安安静静读一下午，靠的不是抢，而是把到馆时间安排明白。",
+      "checks": {
+        "nonempty": true,
+        "absent:这篇文章": true,
+        "absent:原文认为": true,
+        "absent:这篇稿子": true,
+        "absent:家人们": true,
+        "absent:朋友们": true,
+        "absent:我实地": true,
+        "absent:我去过": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 9.3,
+      "skill_read_observed": true
+    },
+    {
+      "case": "new-session-preference",
+      "arm": "baseline",
+      "text": "云桥公园新增了一段 300 米步道，能走的路确实多了一段，但别只顾着高兴：开放时间没变，沿途也没有新增厕所。带孩子去，进园前先把厕所位置找好，逛起来才安心。多走几步是好事，能少一次临时找厕所的慌张，更省心。",
+      "checks": {
+        "nonempty": true,
+        "absent:家人们": true,
+        "absent:朋友们": true,
+        "absent:姐妹们": true,
+        "absent:这篇文章": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 4.84,
+      "skill_read_observed": false
+    },
+    {
+      "case": "new-session-preference",
+      "arm": "candidate",
+      "text": "云桥公园新增了一段三百米步道，开放时间不变。能走的地方多了，对常去的人是好消息。但沿途没有新增厕所，带孩子去，还是先找好厕所再上步道。别等走到一半孩子说急，才想起来找。多走一段是好事，提前打算好，才走得踏实。",
+      "checks": {
+        "nonempty": true,
+        "absent:家人们": true,
+        "absent:朋友们": true,
+        "absent:姐妹们": true,
+        "absent:这篇文章": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 12.24,
+      "skill_read_observed": true
+    },
+    {
+      "case": "evidence-extraction",
+      "arm": "baseline",
+      "text": "{\"rules\":[{\"rule\":\"开头直接给判断，不用称呼或寒暄铺垫。\",\"evidence\":\"选书桌，先别盯颜值。\",\"sample_id\":\"sample-1\"},{\"rule\":\"先否定表面指标（颜值、层数），把注意力拉回实际使用。\",\"evidence\":\"同样叫收纳，多一层抽屉不一定更好用。\",\"sample_id\":\"sample-2\"},{\"rule\":\"把抽象的好坏拆成能自测的具体问题或动作。\",\"evidence\":\"脚能不能放稳？桌面够不够你摊开一本书？\",\"sample_id\":\"sample-1\"},{\"rule\":\"给出明确的先后顺序和可执行动作。\",\"evidence\":\"先量尺寸，再决定怎么买。\",\"sample_id\":\"sample-2\"},{\"rule\":\"用第二人称“你”直接对读者说话。\",\"evidence\":\"你最在意哪一点？\",\"sample_id\":\"sample-1\"},{\"rule\":\"结尾可用一句提问把话题交回观众，但不是每篇必备。\",\"evidence\":\"你最在意哪一点？\",\"sample_id\":\"sample-1\"}],\"unsupported_claims\":[\"“常用家人们招呼”：观点口播样稿均无称呼语，开头直接进入重点；“朋友们”只出现在促销长文，不能推广到口播。\",\"“所有稿件必须编号”：三篇样稿均无编号。\",\"“所有稿件结尾必须提问”：sample-1 以提问收尾，sample-2 没有提问。\"]}",
+      "checks": {
+        "nonempty": true,
+        "traceable_style_evidence": true
+      },
+      "passed": true,
+      "elapsed_seconds": 12.57,
+      "skill_read_observed": false
+    },
+    {
+      "case": "evidence-extraction",
+      "arm": "candidate",
+      "text": "{\"rules\":[{\"rule\":\"开场直接给出具体判断，不用称呼或寒暄铺垫\",\"evidence\":\"选书桌，先别盯颜值。\",\"sample_id\":\"sample-1\"},{\"rule\":\"用贴近实际使用的连续追问帮观众自检\",\"evidence\":\"坐下去，脚能不能放稳？桌面够不够你摊开一本书？\",\"sample_id\":\"sample-1\"},{\"rule\":\"把选择拆成明确的先后条件，告诉观众先看什么\",\"evidence\":\"这两件事过关，再挑颜色。\",\"sample_id\":\"sample-1\"},{\"rule\":\"先指出常见做法未必更好，再给出真正值得看的判断标准\",\"evidence\":\"多一层抽屉不一定更好用。\",\"sample_id\":\"sample-2\"},{\"rule\":\"用可执行的先后步骤收口\",\"evidence\":\"先量尺寸，再决定怎么买。\",\"sample_id\":\"sample-2\"},{\"rule\":\"可用一句提问收尾，邀请观众说出自己在意的点\",\"evidence\":\"你最在意哪一点？\",\"sample_id\":\"sample-1\"}],\"unsupported_claims\":[\"“常用家人们招呼”在观点口播样稿中没有依据；sample-3的“朋友们”属于促销长文，不能推广到口播。\",\"“所有稿件必须编号”在样稿中没有任何依据。\",\"“所有稿件结尾提问”属于过度推广：sample-1以提问收尾，但sample-2以行动建议收尾。\"]}",
+      "checks": {
+        "nonempty": true,
+        "traceable_style_evidence": true
+      },
+      "passed": true,
+      "elapsed_seconds": 18.3,
+      "skill_read_observed": true
+    },
+    {
+      "case": "facts-not-style",
+      "arm": "baseline",
+      "text": "望山社区这次旧物交换，报名的只有18户。数字不算大，但我更在意旧东西有没有真的到需要它的人手里。人少，不代表事情没做成；热闹，也换不来实用。至于会不会再办，眼下没有定论，先把这一次办扎实。",
+      "checks": {
+        "nonempty": true,
+        "absent:72": true,
+        "absent:七十二": true,
+        "absent:每周举办": true,
+        "absent:固定举办": true,
+        "absent:家人们": true,
+        "absent:我参加过": true,
+        "required_fact_or_boundary": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 7.04,
+      "skill_read_observed": false
+    },
+    {
+      "case": "facts-not-style",
+      "arm": "candidate",
+      "text": "望山社区这次旧物交换活动有18户报名。报名的人不多，但都是愿意把闲置物品拿出来的人。旧物交换的价值不在热闹，而在物品能不能找到下一位用的人。活动要不要再办还没定；先把这一场的安排做顺，把反馈收集清楚。",
+      "checks": {
+        "nonempty": true,
+        "absent:72": true,
+        "absent:七十二": true,
+        "absent:每周举办": true,
+        "absent:固定举办": true,
+        "absent:家人们": true,
+        "absent:我参加过": true,
+        "required_fact_or_boundary": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 16.92,
+      "skill_read_observed": true
+    },
+    {
+      "case": "scope-override",
+      "arm": "baseline",
+      "text": "本图书室将于本周日闭馆一天，暂停对外服务。自周一起，恢复正常开放时间。",
+      "checks": {
+        "nonempty": true,
+        "absent:？": true,
+        "absent:?": true,
+        "absent:评论区": true,
+        "absent:你": true,
+        "absent:家人们": true,
+        "sentence_count": true
+      },
+      "passed": true,
+      "elapsed_seconds": 2.77,
+      "skill_read_observed": false
+    },
+    {
+      "case": "scope-override",
+      "arm": "candidate",
+      "text": "图书室本周日全天闭馆，当日暂停对外开放。自周一起，图书室恢复原开放时间。",
+      "checks": {
+        "nonempty": true,
+        "absent:？": true,
+        "absent:?": true,
+        "absent:评论区": true,
+        "absent:你": true,
+        "absent:家人们": true,
+        "sentence_count": true
+      },
+      "passed": true,
+      "elapsed_seconds": 7.97,
+      "skill_read_observed": true
+    },
+    {
+      "case": "missing-source",
+      "arm": "baseline",
+      "text": "按你给的材料，能确认的只有一条标题：虚构青岚社区将新建运动馆。时间、规模、地址、运营方、规划文件都还没有，所以稿子里不会出现任何具体数字和地点。\n\n**条件式短稿（可直接播，约 35 秒）**\n\n> 青岚社区要新建运动馆，目前能看到的只有这一条标题。\n>\n> 什么时候开放、场馆多大、具体在哪个位置、由谁来运营，这些关键信息都还没有确认。\n>\n> 所以先不用急着安排锻炼计划。等正式方案公布，再重点看三件事：什么时候能用、有哪些场地、怎么预约。\n>\n> 信息还没确认，这条消息现在只能算个开头，还不能当结论。\n\n**信息补齐后可替换的两处**（现在先留着空位，不要先替它填上）\n\n| 待确认项 | 补上之后再写 |\n|---|---|\n| 开放时间 | 具体年月或“预计某季度” |\n| 位置、规模、预约方式 | 地址、场地类型、预约渠道 |\n\n另外，按已经确定的反馈，稿子里没有用“家人们”“朋友们”这类称呼，也没有编号，也没有在结尾向读者提问。如果后面你拿到原文或规划文件，我可以再改成信息完整版。",
+      "checks": {
+        "nonempty": true,
+        "absent:明年开业": true,
+        "absent:已经开工": true,
+        "absent:占地5000": true,
+        "absent:我查了": true,
+        "absent:我核实了": true,
+        "absent:我去过": true,
+        "required_fact_or_boundary": true
+      },
+      "passed": true,
+      "elapsed_seconds": 5.23,
+      "skill_read_observed": false
+    },
+    {
+      "case": "missing-source",
+      "arm": "candidate",
+      "text": "已读取 `creator-calibration` 技能，并按确认反馈处理：不喊“家人们”“朋友们”，直接进入重点；用作者自己的立场表达，不去评论原文。`legacy_model_guess` 里的“必须编号、结尾提问”只是模型推测，本轮不采用。\n\n当前缺口：只有标题，缺少时间、规模、具体地址、建设主体和规划文件，不能编造为确定事实。\n\n**条件式口播短稿**\n\n“青岚社区将新建运动馆，目前能确定的只有这个标题。什么时候建、建多大、具体在哪、由谁推进，都还没有材料。我的看法很直接：这几件事没说清楚，就先别急着替它下结论。对居民来说，先问时间、位置、规模和建设主体；等信息落地，再判断它是不是真的方便。”\n\n**使用条件**：补到关键事实并核实后，才能把“只有这个标题”改为确定表述；否则保留这版缺口说明。",
+      "checks": {
+        "nonempty": true,
+        "absent:明年开业": true,
+        "absent:已经开工": true,
+        "absent:占地5000": true,
+        "absent:我查了": true,
+        "absent:我核实了": true,
+        "absent:我去过": true,
+        "required_fact_or_boundary": true
+      },
+      "passed": true,
+      "elapsed_seconds": 20.58,
+      "skill_read_observed": true
+    },
+    {
+      "case": "no-mechanical-pronoun",
+      "arm": "baseline",
+      "text": "{\"feedback_meaning\":\"用户要稿件用第一人称写，也就是以作者自己的立场直接表达；不要写“这篇文章如何如何”这类针对文本本身的评论，也不要点评原文，直接讲自己的判断。\",\"proposed_rules\":[{\"rule\":\"用第一人称表达作者自己的立场和判断\",\"scope\":\"全部稿件\",\"basis\":\"本次原话\"},{\"rule\":\"不写针对文章本身的评论或元话语（如“这篇文章……”“原文说……”），直接进入内容\",\"scope\":\"全部稿件\",\"basis\":\"本次原话，与已确认的 feedback-1 中“用作者自己的立场表达，不要评论原文”一致\"}],\"requires_confirmation\":[\"第一人称是否也适用于促销长文这类以活动信息为主的格式\",\"本条与 feedback-1 是否合并为同一组规则，避免重复执行\",\"legacy_model_guess 中的“招呼语、编号、结尾提问”未经作者确认，本次不纳入规则，是否维持忽略\"]}",
+      "checks": {
+        "nonempty": true,
+        "absent:每30字": true,
+        "absent:每 30 字": true,
+        "absent:每20字": true,
+        "absent:每 20 字": true,
+        "feedback_structure": true
+      },
+      "passed": true,
+      "elapsed_seconds": 5.25,
+      "skill_read_observed": false
+    },
+    {
+      "case": "no-mechanical-pronoun",
+      "arm": "candidate",
+      "text": "{\"feedback_meaning\":\"用户要求改的是叙述视角和口吻：要以作者本人的第一人称直接承担观点、对观众说话，不要用评论或转述原文的口吻写（例如“这篇文章说”“原文如何如何”）。这是对既有确认反馈 feedback-1（“用作者自己的立场表达，不要评论原文”）的再次强调和明确化，不是新增字数、人称密度或固定反转要求；原话没有这些门槛，不得自创数字标准，也不等于机械堆砌“我认为”或把“我”换成“你”。\",\"proposed_rules\":[{\"id\":\"rule-first-person-voice\",\"key\":\"narrative_voice\",\"scope\":\"观点口播\",\"rule\":\"以作者本人第一人称直接承担观点、对观众说话，用直接判断和必要证据推进，不把主张转交给原文或他人。\",\"status\":\"proposed\",\"evidence\":\"用户本轮原话“我要第一人称”（2026-11-11）；与 confirmed feedback-1“用作者自己的立场表达”一致\",\"replaces\":null,\"guard\":\"不设“我”字出现频次、密度或字数门槛；不以机械添加“我认为”代替视角调整\"},{\"id\":\"rule-no-article-commentary\",\"key\":\"no_source_commentary\",\"scope\":\"观点口播\",\"rule\":\"不采用评稿口吻，不出现“这篇文章如何”“原稿后半段”等评论原文的表述；使用资料时只提取事实并重新组织成作者自己的话。\",\"status\":\"proposed\",\"evidence\":\"用户本轮原话“不要这篇文章如何如何”；confirmed feedback-1“不要评论原文”\",\"replaces\":null},{\"id\":\"rule-supersede-legacy-guess\",\"key\":\"legacy_model_guess\",\"scope\":\"账号级\",\"rule\":\"legacy_model_guess 中“常用家人们招呼”和“所有稿件必须编号、结尾提问”不作为有效规则：前者与 feedback-1 明确冲突，后者无作者确认来源。\",\"status\":\"proposed\",\"evidence\":\"legacy_model_guess 自标“model inference, not author confirmed”；feedback-1 明确要求别喊家人们和朋友们\",\"replaces\":\"legacy_model_guess.claim\"}],\"requires_confirmation\":[\"“第一人称”是仅适用于本轮观点口播，还是作为该体裁的长期偏好？\",\"是否需要按已授权流程把上述规则持久化（提交候选→作者确认），并让新会话实际读取生效？\",\"“第一人称”是否允许必要的资料引用或他人视角转述，只禁止评稿口吻，而非禁止一切非“我”陈述？\",\"是否确认废弃 legacy_model_guess 中“所有稿件必须编号、结尾提问”这一无作者依据的推断？\"]}",
+      "checks": {
+        "nonempty": true,
+        "absent:每30字": true,
+        "absent:每 30 字": true,
+        "absent:每20字": true,
+        "absent:每 20 字": true,
+        "feedback_structure": true
+      },
+      "passed": true,
+      "elapsed_seconds": 16.69,
+      "skill_read_observed": true
+    },
+    {
+      "case": "logic-compression",
+      "arm": "baseline",
+      "text": "离得近，不等于通勤一定快。甲路线步行五分钟，班次二十分钟一班；乙路线步行十二分钟，五分钟一班。步行少的那条，可能刚到就错过一班；步行多的那条，也可能到站就上车。等多久，取决于你到站台的时刻。我出门前会先查班次，再算哪条更省时间。",
+      "checks": {
+        "nonempty": true,
+        "absent:乙一定更快": true,
+        "absent:乙肯定更快": true,
+        "absent:家人们": true,
+        "absent:我实测过": true,
+        "absent:这篇文章": true,
+        "required_fact_or_boundary": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 8.56,
+      "skill_read_observed": false
+    },
+    {
+      "case": "logic-compression",
+      "arm": "candidate",
+      "text": "离得近，不代表通勤一定快。甲线走五分钟，看着近，可二十分钟才来一班；乙线要走十二分钟，但车五分钟一班。等待多久，取决于你到站的那一刻，要是刚好错过一班，结果就完全不同。所以别只比步行时间，先看走到站要多久，再看那会儿下一班什么时候到。",
+      "checks": {
+        "nonempty": true,
+        "absent:乙一定更快": true,
+        "absent:乙肯定更快": true,
+        "absent:家人们": true,
+        "absent:我实测过": true,
+        "absent:这篇文章": true,
+        "required_fact_or_boundary": true,
+        "length_bound": true
+      },
+      "passed": true,
+      "elapsed_seconds": 12.49,
+      "skill_read_observed": true
+    }
+  ],
+  "baseline": {
+    "cases": 8,
+    "passed": 8,
+    "median_seconds": 6.14,
+    "skill_reads": 0
+  },
+  "candidate": {
+    "cases": 8,
+    "passed": 8,
+    "median_seconds": 14.59,
+    "skill_reads": 8
+  },
+  "implicit_invocation_smoke": {
+    "case": "author-voice",
+    "passed": true,
+    "elapsed_seconds": 4.47,
+    "skill_read_observed": false,
+    "text": "周末去图书室，怕的不是没座位，是时间没算好。星港社区图书室周六加了40个座位，九点到十八点，确实宽松了不少。可座位多，不等于随时去都有位置，工作人员也提醒过不能提前占座。我自己的做法是，先定好到馆的时间，再倒推出门时间，到了坐下就读，不给占座留念头。座位增加，本来就是一件方便的事；可要让便利真正落到自己身上，先要把时间安排好。能让人坐下来的，从来不只是多出来的椅子。"
+  },
+  "implicit_invocation_revised": {
+    "case": "author-voice",
+    "arm": "candidate",
+    "text": "周六去星港社区图书室，新增了40个座位，看书也能宽松些。不过工作人员提醒，座位不能提前占；图书室九点开门、十八点闭馆，去早了也只能在门口等。我的建议很直接：先算自己几点能到、能读多久，再决定几点出门。别把行程卡在开馆那一刻，也别替还没到的人占位。座位是给人坐的，不是给包坐的。周末人多，位置再多，也经不起有人空着占位。你打算几点去？",
+    "checks": {
+      "nonempty": true,
+      "absent:这篇文章": true,
+      "absent:原文认为": true,
+      "absent:这篇稿子": true,
+      "absent:家人们": true,
+      "absent:朋友们": true,
+      "absent:我实地": true,
+      "absent:我去过": true,
+      "length_bound": true
+    },
+    "passed": true,
+    "elapsed_seconds": 13.35,
+    "skill_read_observed": true
+  },
+  "durable_profile_smoke": {
+    "profile_version": 2,
+    "active_rules": 1,
+    "old_rule_excluded": true,
+    "passed": true,
+    "text": "青溪书屋这次只新增了10把阅读椅，别的设施没变。椅子舒不舒服、光线合不合适，才决定你读不读得下去。先确认座位适不适合阅读，再决定去不去。",
+    "elapsed_seconds": 5.6,
+    "skill_read_observed": true
+  },
+  "published_skill_sha256": "e584d7b3b613fc46543ffc2e11ff5a6505bbb314e21a3da71cce6986bd851895",
+  "description_revised_after_main_comparison": true
+}
